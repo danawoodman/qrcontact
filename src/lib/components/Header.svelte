@@ -11,8 +11,9 @@
 		<span class="text-yellow-500">contact generator</span>
 	</h1>
 	<p>
-		Create a QR code that you can print, email or share so anyone can add you to
-		their contacts.
+		Create a QR code that you can print, email or share with anyone so they can
+		add you to their contacts list. Works on iPhone, Android, Windows, Mac and
+		more!
 	</p>
 	<ol>
 		<li>
@@ -23,9 +24,12 @@
 			or copy it.
 		</li>
 		<li>
-			<strong>Share it!</strong>e Now add it to your email signature, print it
-			out, or even tattoo it on yourself (not recommended)!
+			<strong>Share it!</strong> Now add it to your email signature, print it out,
+			or even tattoo it on yourself (not recommended)!
 		</li>
 	</ol>
-	<p>🔐 Nothing you input on this page leaves this page, your data is safe</p>
+	<p class="text-sm text-slate-500">
+		🔐 <strong>Security note:</strong> Nothing you input on this page leaves this
+		page, your data is safe!
+	</p>
 </header>

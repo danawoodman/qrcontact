@@ -47,10 +47,11 @@ export const vcard = derived(contact, ($contact) => make_vcard($contact));
 function make_vcard(contact: Partial<ContactInfo>): string {
 	const parts: string[] = ["BEGIN:VCARD", "VERSION:4.0"];
 
-	if (contact.first_name || contact.last_name || contact.title) {
+	if (contact.first_name || contact.last_name || contact.middle_name) {
+		const names = [contact.first_name, contact.middle_name, contact.last_name];
 		parts.push(
-			`N:${contact.last_name};${contact.first_name};${contact.title}`,
-			`FN:${contact.first_name} ${contact.last_name}`
+			`N:${contact.last_name};${contact.first_name};${contact.middle_name}`,
+			`FN:${names.join(" ")}`
 		);
 	}
 
