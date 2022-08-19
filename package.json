@@ -36,6 +36,10 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"-": "0.0.1",
+		"D": "1.0.0",
+		"just-flush": "2.2.1",
+		"just-is-empty": "3.2.1",
 		"just-kebab-case": "4.1.1",
 		"qrcode": "1.5.1"
 	}

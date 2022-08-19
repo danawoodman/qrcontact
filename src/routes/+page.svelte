@@ -1,7 +1,8 @@
 <script lang="ts">
 	import CloseIcon from "$lib/components/CloseIcon.svelte";
-	import QrCode from "$lib/components/QRCode.svelte";
+	import QrCode from "./QRCode.svelte";
 	import { contact, file_name, vcard } from "$lib/stores/contact";
+	import { fade } from "svelte/transition";
 
 	let qrcode: string;
 
@@ -54,7 +55,7 @@
 </script>
 
 <main class="mx-auto max-w-prose px-8">
-	<article class="flex flex-col items-center justify-center my-12">
+	<article class="flex flex-col items-center justify-center my-24">
 		<div class="bg-white shadow-md rounded-lg p-4">
 			<QrCode data={$vcard} bind:qrcode />
 		</div>
@@ -94,7 +95,10 @@
 		<h3 class="font-bold mb-4 text-slate-500">Phone numbers</h3>
 		{#if $contact?.phone_numbers?.length}
 			{#each $contact.phone_numbers as phone, i}
-				<fieldset class="my-4 flex items-center">
+				<fieldset
+					class="my-4 flex items-center"
+					transition:fade={{ duration: 200 }}
+				>
 					<input
 						type="text"
 						placeholder="Label..."
@@ -133,7 +137,10 @@
 		<h3 class="font-bold mb-4 text-slate-500">Email addresses</h3>
 		{#if $contact?.emails?.length}
 			{#each $contact.emails as email, i}
-				<fieldset class="my-4 flex items-center">
+				<fieldset
+					class="my-4 flex items-center"
+					transition:fade={{ duration: 200 }}
+				>
 					<input
 						type="text"
 						placeholder="Label..."
@@ -172,7 +179,10 @@
 		<h3 class="font-bold mb-4 text-slate-500">URLs</h3>
 		{#if $contact?.urls?.length}
 			{#each $contact.urls as email, i}
-				<fieldset class="my-4 flex items-center">
+				<fieldset
+					class="my-4 flex items-center"
+					transition:fade={{ duration: 200 }}
+				>
 					<input
 						type="text"
 						placeholder="Label..."
@@ -208,7 +218,10 @@
 		<h3 class="font-bold mb-4 text-slate-500">Addresses</h3>
 		{#if $contact?.addresses?.length}
 			{#each $contact.addresses as address, i}
-				<fieldset class="my-4 flex items-start">
+				<fieldset
+					class="my-4 flex items-start"
+					transition:fade={{ duration: 200 }}
+				>
 					<div class="w-32">
 						<input
 							type="text"

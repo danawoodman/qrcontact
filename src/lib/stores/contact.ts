@@ -1,5 +1,6 @@
 import kebab from "just-kebab-case";
 import { derived, writable } from "svelte/store";
+import flush from "just-flush";
 
 export const contact = writable<Partial<ContactInfo>>({
 	title: "Mr.",
@@ -41,64 +42,87 @@ export const file_name = derived(contact, ($contact) => {
 	return kebab(parts.join("-"));
 });
 
-export const vcard = derived(contact, ($contact) => {
+export const vcard = derived(contact, ($contact) => make_vcard($contact));
+
+function make_vcard(contact: Partial<ContactInfo>): string {
 	const parts: string[] = ["BEGIN:VCARD", "VERSION:4.0"];
-	if ($contact.first_name || $contact.last_name || $contact.title) {
+
+	if (contact.first_name || contact.last_name || contact.title) {
 		parts.push(
-			`N:${$contact.last_name};${$contact.first_name};${$contact.title}`,
-			`FN:${$contact.first_name} ${$contact.last_name}`
+			`N:${contact.last_name};${contact.first_name};${contact.title}`,
+			`FN:${contact.first_name} ${contact.last_name}`
 		);
 	}
-	if ($contact.title) parts.push(`TITLE:${$contact.title}`);
-	if ($contact?.nicknames?.length)
-		parts.push(`NICKNAME:${$contact.nicknames.join(",")}`);
+
+	if (contact.title) parts.push(`TITLE:${contact.title}`);
+
+	if (contact?.nicknames?.length)
+		parts.push(`NICKNAME:${contact.nicknames.join(",")}`);
 
 	// ORG:Example Organisation
 
-	if ($contact?.emails?.length) {
-		parts.push(
-			...$contact.emails.map(
-				(email) => `EMAIL;${email.label};PREF:${email.address}`
-			)
-		);
-	}
+	parts.push(
+		...construct_fields(
+			contact?.emails,
+			(email) => `EMAIL;${email.label};PREF:${email.address}`
+		)
+	);
 
-	if ($contact?.phone_numbers?.length) {
-		parts.push(
-			...$contact.phone_numbers.map(
-				(phone) => `TEL;${phone.label};VOICE;PREF:${phone.number}`
-			)
-		);
-	}
+	parts.push(
+		...construct_fields(
+			contact?.phone_numbers,
+			(phone) => `TEL;${phone.label};VOICE;PREF:${phone.number}`
+		)
+	);
 
 	// https://datatracker.ietf.org/doc/id/draft-ietf-vcarddav-vcardrev-02.html#ADR
-	if ($contact?.addresses?.length) {
-		parts.push(
-			...$contact.addresses.map(
-				// to the post office box; the extended address (e.g. apartment or suite number); the street address; the locality (e.g., city); the region (e.g., state or province); the postal code; the country name
-				(address) => {
-					const addr = [
-						address.po_box,
-						address.street_2,
-						address.street,
-						address.city,
-						address.stateProvince,
-						address.postalCode,
-						address.countryRegion,
-					];
-					return `ADR;${address.label};POSTAL;PARCEL;DOM;PREF:${addr.join(
-						";"
-					)}`;
-				}
-			)
-		);
-	}
-	if ($contact?.urls?.length) {
-		parts.push(
-			...$contact.urls.map((url) => `URL;${url.label};PREF:${url.href}`)
-		);
-	}
+	parts.push(
+		...construct_fields(contact?.addresses, (address) => {
+			const addr = [
+				address.po_box,
+				address.street_2,
+				address.street,
+				address.city,
+				address.state_province,
+				address.postal_code,
+				address.country_region,
+			];
+			return `ADR;${address.label};POSTAL;PARCEL;DOM;PREF:${addr.join(";")}`;
+		})
+	);
+
+	parts.push(
+		...construct_fields(
+			contact?.urls,
+			(url) => `URL;${url.label};PREF:${url.href}`
+		)
+	);
 
 	parts.push(`REV:${new Date().toISOString()}`, "END:VCARD");
+
 	return parts.join("\n");
-});
+}
+
+function construct_fields<T>(
+	collection: T[] | undefined,
+	cb: (v: T) => string
+): string[] {
+	const fields: string[] = [];
+
+	if (!collection?.length) return fields;
+
+	if (collection.length) {
+		for (const item of collection) {
+			if (!has_values(item)) continue;
+			fields.push(cb(item));
+		}
+	}
+
+	return fields;
+}
+
+function has_values(obj: Record<string, any>): boolean {
+	const values = Object.values(obj).map((v) => (v === "" ? undefined : v));
+	const flushed = flush(values);
+	return Boolean(flushed?.length);
+}

@@ -4,8 +4,9 @@
 @tailwind utilities;
 
 .link {
-	@apply text-black border-b border-black pb-0.5 font-bold;
-	@apply hover:bg-yellow-300;
+	@apply text-black border border-b-black border-transparent font-bold;
+	@apply pb-0.5 px-1;
+	@apply hover:bg-yellow-300 hover:border-black;
 	@apply transition-colors duration-300;
 }
 .link.--sm {
@@ -13,7 +14,7 @@
 }
 .link:focus {
 	@apply outline-none;
-	@apply bg-teal-500;
+	@apply bg-teal-500 border-black;
 }
 
 .input {
