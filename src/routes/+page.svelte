@@ -116,7 +116,7 @@
 					<input
 						type="text"
 						placeholder="Phone number..."
-						class="input ml-2 flex-1"
+						class="input ml-2 w-full flex-1"
 						bind:value={phone.number}
 					/>
 					<button
@@ -158,7 +158,7 @@
 					<input
 						type="text"
 						placeholder="Email address..."
-						class="input ml-2 flex-1"
+						class="input ml-2 w-full flex-1"
 						bind:value={email.address}
 					/>
 					<button
@@ -200,7 +200,7 @@
 					<input
 						type="text"
 						placeholder="Email address..."
-						class="input ml-2 flex-1"
+						class="input ml-2 w-full flex-1"
 						bind:value={email.href}
 					/>
 					<button
