@@ -68,9 +68,13 @@
 
 	<section class="flex items-center">
 		<fieldset class="flex-1">
-			<label class="flex flex-col">
+			<label class="flex flex-col flex-1">
 				<strong class="mb-2">First name</strong>
-				<input type="text" class="input" bind:value={$contact.first_name} />
+				<input
+					type="text"
+					class="input w-full"
+					bind:value={$contact.first_name}
+				/>
 			</label>
 		</fieldset>
 		<fieldset class="ml-2">
@@ -78,15 +82,19 @@
 				<strong class="mb-2">Middle name</strong>
 				<input
 					type="text"
-					class="input w-32"
+					class="input w-28"
 					bind:value={$contact.middle_name}
 				/>
 			</label>
 		</fieldset>
 		<fieldset class="ml-2 flex-1">
-			<label class="flex flex-col">
+			<label class="flex flex-col flex-1">
 				<strong class="mb-2">Last name</strong>
-				<input type="text" class="input" bind:value={$contact.last_name} />
+				<input
+					type="text"
+					class="input w-full"
+					bind:value={$contact.last_name}
+				/>
 			</label>
 		</fieldset>
 	</section>
