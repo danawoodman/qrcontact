@@ -11,6 +11,12 @@ How it works:
 3. Share the QR code with someone who wants your contact info (print on your business card, make a sticker you put anywhere, tattoo it, whatever you want!)
 4. Someone scans this QR code on their phone and then can quickly add you to their contacts list!
 
+Features:
+
+- Add as many contact details as you want!
+- Upload a photo to be added (coming soon!)
+- Works offline!
+
 ## Development
 
 Built with SvelteKit.
