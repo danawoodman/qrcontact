@@ -34,7 +34,7 @@
 }
 
 .btn {
-	@apply outline-none;
+	@apply outline-none no-underline;
 	@apply relative;
 	@apply px-8 py-4;
 	@apply cursor-pointer select-none touch-manipulation;
@@ -45,13 +45,9 @@
 	@apply text-sm;
 	@apply px-4 py-2;
 }
-.btn.--icon {
-	@apply text-sm;
-	@apply p-2;
-}
-.btn.--pill,
-.btn.--pill:after {
-	@apply rounded-full;
+.btn.--lg {
+	@apply text-xl;
+	@apply px-8 py-4;
 }
 .btn.--sm:after {
 	@apply top-1 left-1;
@@ -62,6 +58,16 @@
 	@apply bg-yellow-300;
 	@apply duration-200;
 	content: "";
+}
+.btn.--icon,
+.btn.--icon:after {
+	@apply text-sm;
+	@apply p-2.5;
+	@apply rounded-full;
+}
+.btn.--pill,
+.btn.--pill:after {
+	@apply rounded-full;
 }
 .btn:hover:after {
 	@apply top-0 left-0;
