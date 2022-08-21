@@ -66,41 +66,31 @@
 		</p>
 	</article>
 
-	<section class="flex items-center">
-		<fieldset class="flex-1">
-			<label class="flex flex-col flex-1">
-				<strong class="mb-2">First name</strong>
-				<input
-					type="text"
-					class="input w-full"
-					bind:value={$contact.first_name}
-				/>
-			</label>
-		</fieldset>
-		<fieldset class="ml-2">
-			<label class="flex flex-col">
-				<strong class="mb-2">Middle name</strong>
-				<input
-					type="text"
-					class="input w-28"
-					bind:value={$contact.middle_name}
-				/>
-			</label>
-		</fieldset>
-		<fieldset class="ml-2 flex-1">
-			<label class="flex flex-col flex-1">
-				<strong class="mb-2">Last name</strong>
-				<input
-					type="text"
-					class="input w-full"
-					bind:value={$contact.last_name}
-				/>
-			</label>
+	<section id="name" class="">
+		<h3 class="section-heading">Your name</h3>
+		<fieldset class="flex items-center">
+			<input
+				type="text"
+				class="input w-full"
+				bind:value={$contact.first_name}
+			/>
+			<input
+				type="text"
+				class="input mx-2 w-20 sm:w-28"
+				placeholder="Middle name..."
+				bind:value={$contact.middle_name}
+			/>
+			<input
+				type="text"
+				class="input w-full"
+				placeholder="Last name..."
+				bind:value={$contact.last_name}
+			/>
 		</fieldset>
 	</section>
 
-	<section class="mt-12">
-		<h3 class="font-bold mb-4 text-slate-500">Phone numbers</h3>
+	<section id="phone-numbers" class="mt-12">
+		<h3 class="section-heading">Phone numbers</h3>
 		{#if $contact?.phone_numbers?.length}
 			{#each $contact.phone_numbers as phone, i}
 				<fieldset
@@ -110,7 +100,7 @@
 					<input
 						type="text"
 						placeholder="Label..."
-						class="input w-32"
+						class="input w-24 sm:w-32"
 						bind:value={phone.label}
 					/>
 					<input
@@ -141,8 +131,8 @@
 		</button>
 	</section>
 
-	<section class="mt-12">
-		<h3 class="font-bold mb-4 text-slate-500">Email addresses</h3>
+	<section id="emails" class="mt-12">
+		<h3 class="section-heading">Email addresses</h3>
 		{#if $contact?.emails?.length}
 			{#each $contact.emails as email, i}
 				<fieldset
@@ -152,7 +142,7 @@
 					<input
 						type="text"
 						placeholder="Label..."
-						class="input w-32"
+						class="input w-24 sm:w-32"
 						bind:value={email.label}
 					/>
 					<input
@@ -183,8 +173,8 @@
 		</button>
 	</section>
 
-	<section class="mt-12">
-		<h3 class="font-bold mb-4 text-slate-500">URLs</h3>
+	<section id="urls" class="mt-12">
+		<h3 class="section-heading">URLs</h3>
 		{#if $contact?.urls?.length}
 			{#each $contact.urls as email, i}
 				<fieldset
@@ -194,7 +184,7 @@
 					<input
 						type="text"
 						placeholder="Label..."
-						class="input w-32"
+						class="input w-24 sm:w-32"
 						bind:value={email.label}
 					/>
 					<input
@@ -222,34 +212,34 @@
 		</button>
 	</section>
 
-	<section class="mt-12">
-		<h3 class="font-bold mb-4 text-slate-500">Addresses</h3>
+	<section id="addresses" class="mt-12">
+		<h3 class="section-heading">Addresses</h3>
 		{#if $contact?.addresses?.length}
 			{#each $contact.addresses as address, i}
 				<fieldset
-					class="my-4 flex items-start"
+					class="my-6 sm:flex items-start"
 					transition:fade={{ duration: 200 }}
 				>
-					<div class="w-32">
+					<div class="sm:w-32">
 						<input
 							type="text"
 							placeholder="Label..."
-							class="input w-full"
+							class="input --block"
 							bind:value={address.label}
 						/>
 					</div>
-					<div class="flex-1 ml-2">
-						<div class="flex items-center">
+					<div class="flex-1 sm:ml-2">
+						<div class="flex flex-col sm:flex-row items-center">
 							<input
 								type="text"
 								placeholder="Street address..."
-								class="input w-full mr-2"
+								class="input w-full mt-2 sm:mr-2 sm:mt-0"
 								bind:value={address.street}
 							/>
 							<input
 								type="text"
 								placeholder="Street address 2..."
-								class="input w-full"
+								class="input w-full mt-2 sm:mt-0"
 								bind:value={address.street_2}
 							/>
 						</div>
@@ -283,7 +273,7 @@
 						</div>
 					</div>
 					<button
-						class="btn --sm --pill --icon ml-2"
+						class="btn --sm --pill --icon mt-2 sm:mt-0 sm:ml-2"
 						on:click={() => remove_address(i)}
 					>
 						<CloseIcon />
@@ -306,3 +296,9 @@
 
 	<pre class="mt-12 p-6 bg-slate-200 rounded-md overflow-auto">{$vcard}</pre>
 </main>
+
+<style lang="postcss">
+	.section-heading {
+		@apply font-bold mb-4 text-slate-500;
+	}
+</style>
