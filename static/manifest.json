@@ -1,0 +1,16 @@
+{
+	"short_name": "qrcontact",
+	"name": "qrcontact - QR code contact generator",
+	"start_url": "/",
+	"icons": [
+		{
+			"src": "logo_512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"display": "standalone",
+	"scope": "/",
+	"shortcuts": [],
+	"description": "A tool that makes easy to scan QR code contact cards that anyone can scan with their phone to add you to their contacts."
+}
