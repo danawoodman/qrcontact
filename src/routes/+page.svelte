@@ -2,7 +2,7 @@
 	import CloseIcon from "$lib/components/CloseIcon.svelte";
 	import QrCode from "./QRCode.svelte";
 	import { contact, file_name, vcard } from "$lib/stores/contact";
-	import { fade } from "svelte/transition";
+	import { fade, slide } from "svelte/transition";
 
 	let qrcode: string;
 
@@ -95,7 +95,7 @@
 			{#each $contact.phone_numbers as phone, i}
 				<fieldset
 					class="my-4 flex items-center"
-					transition:fade={{ duration: 200 }}
+					transition:slide={{ duration: 200 }}
 				>
 					<input
 						type="text"
@@ -137,7 +137,7 @@
 			{#each $contact.emails as email, i}
 				<fieldset
 					class="my-4 flex items-center"
-					transition:fade={{ duration: 200 }}
+					transition:slide={{ duration: 200 }}
 				>
 					<input
 						type="text"
@@ -179,7 +179,7 @@
 			{#each $contact.urls as email, i}
 				<fieldset
 					class="my-4 flex items-center"
-					transition:fade={{ duration: 200 }}
+					transition:slide={{ duration: 200 }}
 				>
 					<input
 						type="text"
@@ -218,7 +218,7 @@
 			{#each $contact.addresses as address, i}
 				<fieldset
 					class="my-6 sm:flex items-start"
-					transition:fade={{ duration: 200 }}
+					transition:slide={{ duration: 200 }}
 				>
 					<div class="sm:w-32">
 						<input
