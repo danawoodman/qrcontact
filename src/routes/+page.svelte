@@ -5,6 +5,7 @@
 	import { fade, slide } from "svelte/transition";
 
 	let qrcode: string;
+	let view_vcard = false;
 
 	function remove_by_index<T>(
 		list: T[] | undefined,
@@ -294,7 +295,21 @@
 		</button>
 	</section>
 
-	<pre class="mt-12 p-6 bg-slate-200 rounded-md overflow-auto">{$vcard}</pre>
+	<p class="mt-20 mb-4">
+		<button class="link --sm" on:click={() => (view_vcard = !view_vcard)}>
+			{#if view_vcard}
+				Hide
+			{:else}
+				View raw vCard data
+			{/if}
+		</button>
+	</p>
+
+	{#if view_vcard}
+		<div transition:slide>
+			<pre class="p-6 bg-slate-200 rounded-md overflow-auto">{$vcard}</pre>
+		</div>
+	{/if}
 </main>
 
 <style lang="postcss">

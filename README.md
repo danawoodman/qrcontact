@@ -16,6 +16,7 @@ Features:
 - Add as many contact details as you want!
 - Upload a photo to be added (coming soon!)
 - Works offline!
+- Caches your details in localstorage so even if you leave the page you can come back and edit your info.
 
 ## Development
 
