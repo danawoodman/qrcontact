@@ -1,9 +1,9 @@
 <section class="mx-auto max-w-prose prose dark:prose-invert mt-16 mb-12 px-8">
-	<p class="text-center text-sm mb-6">
+	<p class="text-center text-sm mb-8">
 		<span
 			class="
 			bg-blue-200 text-blue-800 
-			dark:bg-blue-900 dark:text-blue-300
+			dark:bg-teal-400 dark:text-slate-900
 			px-4 py-1.5 rounded-full 
 			font-bold uppercase"
 		>
