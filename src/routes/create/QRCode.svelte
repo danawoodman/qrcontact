@@ -16,6 +16,6 @@
 	<img src={value} alt="QR Code" />
 {:catch error}
 	<p class="text-red-700 bg-red-50 px-6 py-4 rounded-md">
-		ERROR: {error}
+		⚠️ {error}
 	</p>
 {/await}
