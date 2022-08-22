@@ -63,7 +63,7 @@
 
 <main class="px-4">
 	<div class="md:flex items-start mx-auto justify-center">
-		<div class="max-w-prose sm:mr-12">
+		<div class="max-w-prose md:mr-12">
 			<!-- <section id="photo" class="mt-20">
 				<PhotoUploader />
 			</section> -->
