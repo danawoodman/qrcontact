@@ -373,7 +373,7 @@
 
 		<section
 			id="security-note"
-			class="text-sm text-slate-500 mt-12 text-center"
+			class="text-sm text-slate-500 dark:text-slate-300 mt-12 text-center"
 		>
 			<p class="mb-2">
 				🔐 <strong>Security note:</strong>
@@ -385,6 +385,6 @@
 
 <style lang="postcss">
 	.section-heading {
-		@apply font-bold mb-4 text-slate-500;
+		@apply font-bold mb-4 text-slate-500 dark:text-slate-300;
 	}
 </style>
