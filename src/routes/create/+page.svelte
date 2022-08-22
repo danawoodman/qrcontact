@@ -69,7 +69,7 @@
 			</section> -->
 
 			<section id="name" class="my-12">
-				<h3 class="section-heading">Your name</h3>
+				<h1 class="section-heading">Your name</h1>
 				<fieldset class="flex items-center">
 					<input
 						aria-label="First name"
@@ -98,7 +98,7 @@
 			</section>
 
 			<section id="phone-numbers" class="my-12">
-				<h3 class="section-heading">Phone numbers</h3>
+				<h1 class="section-heading">Phone numbers</h1>
 				{#if $contact?.phone_numbers?.length}
 					{#each $contact.phone_numbers as phone, i}
 						<fieldset
@@ -146,7 +146,7 @@
 			</section>
 
 			<section id="emails" class="my-12">
-				<h3 class="section-heading">Email addresses</h3>
+				<h1 class="section-heading">Email addresses</h1>
 				{#if $contact?.emails?.length}
 					{#each $contact.emails as email, i}
 						<fieldset
@@ -194,7 +194,7 @@
 			</section>
 
 			<section id="urls" class="my-12">
-				<h3 class="section-heading">URLs</h3>
+				<h1 class="section-heading">URLs</h1>
 				{#if $contact?.urls?.length}
 					{#each $contact.urls as email, i}
 						<fieldset
@@ -242,7 +242,7 @@
 			</section>
 
 			<section id="addresses" class="my-12">
-				<h3 class="section-heading">Addresses</h3>
+				<h1 class="section-heading">Addresses</h1>
 				{#if $contact?.addresses?.length}
 					{#each $contact.addresses as address, i}
 						<fieldset
