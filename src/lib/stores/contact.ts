@@ -1,9 +1,9 @@
 import kebab from "just-kebab-case";
 import { derived, writable } from "svelte/store";
 import flush from "just-flush";
-import { localStorageStore } from "$lib/stores/localstorage";
+import { local_storage_store } from "$lib/stores/localstorage";
 
-export const contact = localStorageStore<Partial<ContactInfo>>("contact", {
+export const contact = local_storage_store<Partial<ContactInfo>>("contact", {
 	title: "Mr.",
 	first_name: "John",
 	middle_name: "H",

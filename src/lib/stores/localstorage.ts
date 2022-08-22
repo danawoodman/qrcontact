@@ -11,7 +11,7 @@ import { browser } from "$app/env";
 type Update<T> = Writable<T>["update"];
 type Set<T> = Writable<T>["set"];
 
-export function localStorageStore<Item>(
+export function local_storage_store<Item>(
 	key: string,
 	initial: Item,
 	{
@@ -22,21 +22,21 @@ export function localStorageStore<Item>(
 		deserialize: (value: string) => Item;
 	} = { serialize: JSON.stringify, deserialize: JSON.parse }
 ) {
-	let currentValue = initial;
+	let current_value = initial;
 
-	function syncCurrentValue(setStore: Writable<Item>["set"], value: Item) {
+	function sync_current_value(setStore: Writable<Item>["set"], value: Item) {
 		setStore(value);
-		currentValue = value;
+		current_value = value;
 	}
 
-	function parseFromLocalStorage(localValue: string | null) {
-		if (localValue === null) return initial;
+	function parse_from_local_storage(local_value: string | null) {
+		if (local_value === null) return initial;
 
 		try {
-			return deserialize(localValue);
+			return deserialize(local_value);
 		} catch (error) {
 			console.error(
-				`localStorage's value for \`${key}\` (\`${localValue}\`) could not be deserialized with ${deserialize} because of ${error}, so the initial value \`${initial}\` will be used instead`
+				`localStorage's value for \`${key}\` (\`${local_value}\`) could not be deserialized with ${deserialize} because of ${error}, so the initial value \`${initial}\` will be used instead`
 			);
 			return initial;
 		}
@@ -45,29 +45,36 @@ export function localStorageStore<Item>(
 	const { set: setStore, subscribe } = writable(initial, (setStore) => {
 		if (browser) {
 			/** @type {string | null} */
-			let localStorageValue = null;
+			let local_storage_value = null;
 			try {
-				localStorageValue = localStorage.getItem(key);
+				local_storage_value = localStorage.getItem(key);
 			} catch (error) {
 				console.error(
 					`the \`${key}\` store's value could not be restored from localStorage because of ${error}, so the initial value \`${initial}\` will be used instead`
 				);
 			}
 
-			syncCurrentValue(setStore, parseFromLocalStorage(localStorageValue));
+			sync_current_value(
+				setStore,
+				parse_from_local_storage(local_storage_value)
+			);
 
-			const setFromStorageEvents = (event: StorageEvent) => {
+			const set_from_storage_events = (event: StorageEvent) => {
 				if (event.key === key)
-					syncCurrentValue(setStore, parseFromLocalStorage(event.newValue));
+					sync_current_value(
+						setStore,
+						parse_from_local_storage(event.newValue)
+					);
 			};
-			window.addEventListener("storage", setFromStorageEvents);
-			return () => window.removeEventListener("storage", setFromStorageEvents);
+			window.addEventListener("storage", set_from_storage_events);
+			return () =>
+				window.removeEventListener("storage", set_from_storage_events);
 		}
 	});
 
 	// Set both localStorage and this Svelte store
 	function set(value: Parameters<Set<Item>>[0]): ReturnType<Set<Item>> {
-		syncCurrentValue(setStore, value);
+		sync_current_value(setStore, value);
 
 		try {
 			const serialized = serialize(value);
@@ -87,7 +94,7 @@ export function localStorageStore<Item>(
 	}
 
 	function update(fn: Parameters<Update<Item>>[0]): ReturnType<Update<Item>> {
-		set(fn(currentValue));
+		set(fn(current_value));
 	}
 
 	return { set, subscribe, update };

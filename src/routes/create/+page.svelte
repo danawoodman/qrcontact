@@ -93,7 +93,7 @@
 		{#if $contact?.phone_numbers?.length}
 			{#each $contact.phone_numbers as phone, i}
 				<fieldset
-					class="my-4 flex items-center"
+					class="my-2 flex items-center"
 					transition:slide={{ duration: 200 }}
 				>
 					<input
@@ -114,6 +114,8 @@
 				</fieldset>
 			{/each}
 		{/if}
+		<p class="mt-4">
+
 		<button
 			class="link --sm"
 			on:click={() => {
@@ -125,6 +127,7 @@
 		>
 			Add phone number
 		</button>
+		</p>
 	</section>
 
 	<section id="emails" class="mt-12">
@@ -132,7 +135,7 @@
 		{#if $contact?.emails?.length}
 			{#each $contact.emails as email, i}
 				<fieldset
-					class="my-4 flex items-center"
+					class="my-2 flex items-center"
 					transition:slide={{ duration: 200 }}
 				>
 					<input
@@ -153,17 +156,19 @@
 				</fieldset>
 			{/each}
 		{/if}
-		<button
-			class="link --sm"
-			on:click={() => {
-				$contact.emails = [
-					...($contact.emails ?? []),
-					{ label: "", address: "" },
-				];
-			}}
-		>
-			Add email address
-		</button>
+		<p class="mt-4">
+			<button
+				class="link --sm"
+				on:click={() => {
+					$contact.emails = [
+						...($contact.emails ?? []),
+						{ label: "", address: "" },
+					];
+				}}
+			>
+				Add email address
+			</button>
+		</p>
 	</section>
 
 	<section id="urls" class="mt-12">
@@ -171,7 +176,7 @@
 		{#if $contact?.urls?.length}
 			{#each $contact.urls as email, i}
 				<fieldset
-					class="my-4 flex items-center"
+					class="my-2 flex items-center"
 					transition:slide={{ duration: 200 }}
 				>
 					<input
@@ -192,14 +197,16 @@
 				</fieldset>
 			{/each}
 		{/if}
-		<button
-			class="link --sm"
-			on:click={() => {
-				$contact.urls = [...($contact.urls ?? []), { label: "", href: "" }];
-			}}
-		>
-			Add URL
-		</button>
+		<p class="mt-4">
+			<button
+				class="link --sm"
+				on:click={() => {
+					$contact.urls = [...($contact.urls ?? []), { label: "", href: "" }];
+				}}
+			>
+				Add URL
+			</button>
+		</p>
 	</section>
 
 	<section id="addresses" class="mt-12">
@@ -207,7 +214,7 @@
 		{#if $contact?.addresses?.length}
 			{#each $contact.addresses as address, i}
 				<fieldset
-					class="my-6 sm:flex items-start"
+					class="my-4 sm:flex items-start"
 					transition:slide={{ duration: 200 }}
 				>
 					<div class="sm:w-32">

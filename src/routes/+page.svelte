@@ -3,21 +3,22 @@
 		<span
 			class="bg-blue-200 text-blue-800 px-4 py-1.5 rounded-full font-bold uppercase"
 		>
-			💯 Free (no really!)
+			100% FREE (REALLY)
 		</span>
 	</p>
-	<h1 class="text-5xl uppercase text-center">
+	<h1 class="text-6xl uppercase text-center">
 		QR Code <br />
 		<span class="text-yellow-500">contact generator</span>
 	</h1>
-	<p>
+	<p class="text-xl leading-relaxed">
 		Create a QR code that you can print, email or share with anyone so they can
 		add you to their contacts list. Works on iPhone, Android, Windows, Mac and
 		more!
 	</p>
 	<ol>
 		<li>
-			<strong>Fill out your details:</strong> As little or as much as you want!
+			<strong>Fill out your details:</strong> Add your name, emails, phone numbers,
+			addresses and more.
 		</li>
 		<li>
 			<strong>Save your QR code:</strong> Download the image file to your computer
