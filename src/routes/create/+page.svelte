@@ -351,7 +351,7 @@
 		</section>
 	</div>
 
-	<div class="mx-auto max-w-prose mx-8">
+	<div class="mx-auto max-w-prose">
 		<section id="vcard-data">
 			<p class="mt-20 mb-4 text-center">
 				<button class="link --sm" on:click={() => (view_vcard = !view_vcard)}>
