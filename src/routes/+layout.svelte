@@ -5,7 +5,7 @@
 	import { navigating } from "$app/stores";
 	import { fade } from "svelte/transition";
 
-	let duration = 300;
+	let duration = 200;
 
 	$: changed = $navigating?.from !== $navigating?.to;
 </script>
@@ -13,7 +13,7 @@
 <Header />
 
 {#key changed}
-	<div in:fade={{ delay: duration, duration }} out:fade={{ duration }}>
+	<div in:fade={{ duration }} out:fade={{ delay: duration, duration }}>
 		<slot />
 	</div>
 {/key}
