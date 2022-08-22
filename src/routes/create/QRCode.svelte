@@ -14,7 +14,13 @@
 	{#await promise}
 		<p class="text-slate-600 italic text-sm">Loading QR code...</p>
 	{:then value}
-		<img src={value} alt="QR Code" />
+		<img
+			src={value}
+			alt="QR Code"
+			width="300px"
+			height="300px"
+			class="w-full"
+		/>
 	{:catch error}
 		<p class="text-red-700 bg-red-50 px-6 py-4 rounded-md">
 			⚠️ {error}
