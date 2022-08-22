@@ -72,12 +72,14 @@
 				<h3 class="section-heading">Your name</h3>
 				<fieldset class="flex items-center">
 					<input
+						aria-label="First name"
 						type="text"
 						name="first-name"
 						class="input w-full"
 						bind:value={$contact.first_name}
 					/>
 					<input
+						aria-label="Middle name"
 						type="text"
 						name="middle-name"
 						class="input mx-2 w-20 sm:w-28"
@@ -85,6 +87,7 @@
 						bind:value={$contact.middle_name}
 					/>
 					<input
+						aria-label="Last name"
 						type="text"
 						name="last-name"
 						class="input w-full"
@@ -103,6 +106,7 @@
 							transition:slide={{ duration: 200 }}
 						>
 							<input
+								aria-label="Phone number label"
 								type="phone"
 								name="phone"
 								placeholder="Label..."
@@ -110,6 +114,7 @@
 								bind:value={phone.label}
 							/>
 							<input
+								aria-label="Phone number"
 								type="text"
 								placeholder="Phone number..."
 								class="input ml-2 w-full flex-1"
@@ -149,6 +154,7 @@
 							transition:slide={{ duration: 200 }}
 						>
 							<input
+								aria-label="Email address label"
 								type="email"
 								name="email"
 								placeholder="Label..."
@@ -156,6 +162,7 @@
 								bind:value={email.label}
 							/>
 							<input
+								aria-label="Email address"
 								type="text"
 								placeholder="Email address..."
 								class="input ml-2 w-full flex-1"
@@ -195,6 +202,7 @@
 							transition:slide={{ duration: 200 }}
 						>
 							<input
+								aria-label="URL label"
 								type="text"
 								name="url"
 								placeholder="Label..."
@@ -202,6 +210,7 @@
 								bind:value={email.label}
 							/>
 							<input
+								aria-label="URL"
 								type="text"
 								placeholder="Email address..."
 								class="input ml-2 w-full flex-1"
@@ -242,6 +251,7 @@
 						>
 							<div class="sm:w-36">
 								<input
+									aria-label="Address label"
 									type="text"
 									placeholder="Label..."
 									class="input --block"
@@ -251,6 +261,7 @@
 							<div class="flex-1 sm:ml-2">
 								<div class="flex flex-col sm:flex-row items-center">
 									<input
+										aria-label="Address street address"
 										name="street-address"
 										type="text"
 										placeholder="Street address..."
@@ -258,6 +269,7 @@
 										bind:value={address.street}
 									/>
 									<input
+										aria-label="Address secondary street address"
 										type="text"
 										name="street-address-2"
 										placeholder="Street address 2..."
@@ -267,6 +279,7 @@
 								</div>
 								<div class="flex items-center mt-2">
 									<input
+										aria-label="Address city"
 										type="text"
 										name="city"
 										placeholder="City..."
@@ -274,6 +287,7 @@
 										bind:value={address.city}
 									/>
 									<input
+										aria-label="Address state"
 										type="text"
 										name="state"
 										placeholder="State..."
@@ -283,6 +297,7 @@
 								</div>
 								<div class="flex items-center mt-2">
 									<input
+										aria-label="Address postal code"
 										type="text"
 										name="postal-code"
 										placeholder="Postal code..."
@@ -290,6 +305,7 @@
 										bind:value={address.postal_code}
 									/>
 									<input
+										aria-label="Address country"
 										type="text"
 										name="country"
 										placeholder="Country..."
