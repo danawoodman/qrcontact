@@ -345,7 +345,8 @@
 
 			{#if view_vcard}
 				<div transition:slide>
-					<pre class="p-6 bg-slate-200 rounded-md overflow-auto">{$vcard}</pre>
+					<pre
+						class="p-6 bg-slate-200 dark:bg-slate-800 rounded-md overflow-auto">{$vcard}</pre>
 				</div>
 			{/if}
 		</section>

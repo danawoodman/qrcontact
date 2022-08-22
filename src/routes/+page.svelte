@@ -1,12 +1,16 @@
-<section class="mx-auto max-w-prose prose mt-16 mb-12 px-8">
+<section class="mx-auto max-w-prose prose dark:prose-invert mt-16 mb-12 px-8">
 	<p class="text-center text-sm mb-6">
 		<span
-			class="bg-blue-200 text-blue-800 px-4 py-1.5 rounded-full font-bold uppercase"
+			class="
+			bg-blue-200 text-blue-800 
+			dark:bg-blue-900 dark:text-blue-300
+			px-4 py-1.5 rounded-full 
+			font-bold uppercase"
 		>
 			100% FREE (REALLY)
 		</span>
 	</p>
-	<h1 class="text-6xl uppercase text-center">
+	<h1 class="text-6xl uppercase text-center dark:text-slate-300">
 		QR Code <br />
 		<span class="text-yellow-500">contact generator</span>
 	</h1>

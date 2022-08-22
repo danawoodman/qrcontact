@@ -3,25 +3,33 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	@apply -z-20;
+	@apply bg-slate-50;
+	@apply dark:bg-slate-900 dark:text-slate-100;
+}
+
 .link {
-	@apply text-black border border-b-black border-transparent font-bold;
+	@apply text-black border-b border-black font-bold;
+	@apply dark:text-slate-300 dark:border-slate-300;
 	@apply py-1 px-1.5;
 	@apply relative;
 	@apply transition-colors duration-300;
-}
-.link.--sm {
-	@apply text-sm;
-}
-.link:focus {
-	@apply outline-none;
-	@apply bg-teal-500 border-black;
 }
 .link:after {
 	@apply absolute w-full h-1/4 -z-10;
 	@apply -bottom-1.5 -right-1.5;
 	@apply bg-yellow-300;
+	@apply dark:bg-yellow-300 dark:border-white;
 	@apply duration-200;
 	@apply content-[''];
+}
+.link:focus {
+	@apply outline-none;
+	@apply bg-teal-500 border-black;
+}
+.link:hover {
+	@apply dark:text-slate-900 dark:border-white;
 }
 .link:hover:after {
 	@apply bottom-0 right-0;
@@ -31,13 +39,18 @@
 .link:focus:after {
 	@apply bg-teal-500;
 }
+.link.--sm {
+	@apply text-sm;
+}
 
 .input {
 	@apply bg-slate-200 rounded-lg;
+	@apply dark:bg-slate-800;
 	@apply px-4 py-2;
 }
 .input:focus {
 	@apply bg-slate-300;
+	@apply dark:bg-slate-700;
 	@apply outline-none;
 }
 .input.--block {
@@ -54,7 +67,16 @@
 	@apply px-8 py-4;
 	@apply cursor-pointer select-none touch-manipulation;
 	@apply bg-transparent border border-black;
+	@apply dark:border-white dark:text-slate-900;
 	@apply tracking-widest;
+}
+.btn:after {
+	@apply absolute h-full w-full -z-10;
+	@apply top-2 left-2;
+	@apply bg-yellow-300;
+	@apply dark:bg-yellow-300;
+	@apply duration-200;
+	content: "";
 }
 .btn.--sm {
 	@apply text-sm;
@@ -66,13 +88,6 @@
 }
 .btn.--sm:after {
 	@apply top-1 left-1;
-}
-.btn:after {
-	@apply absolute h-full w-full -z-10;
-	@apply top-2 left-2;
-	@apply bg-yellow-300;
-	@apply duration-200;
-	content: "";
 }
 .btn.--icon,
 .btn.--icon:after {
