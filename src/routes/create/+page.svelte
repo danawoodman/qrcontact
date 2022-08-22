@@ -303,7 +303,7 @@
 
 		<section
 			id="qrcode"
-			class="my-12 flex flex-col items-center justify-center w-64"
+			class="my-12 flex flex-col items-center justify-center md:w-64"
 		>
 			<div class="bg-white shadow-md rounded-lg p-4">
 				<QrCode data={$vcard} bind:qrcode />
