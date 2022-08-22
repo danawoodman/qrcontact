@@ -1,4 +1,10 @@
-<footer class="mx-auto text-center text-slate-600 text-sm mt-24 px-8 mb-36">
+<footer
+	class="
+				relative
+				mx-auto text-center 
+				text-slate-600 text-sm 
+				mt-24 px-8 mb-36"
+>
 	<p>
 		Built with 🦄 by <a href="https://danawoodman.com" class="link"
 			>Dana Woodman</a

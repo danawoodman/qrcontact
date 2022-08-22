@@ -5,8 +5,8 @@
 
 .link {
 	@apply text-black border border-b-black border-transparent font-bold;
-	@apply pb-0.5 px-1;
-	@apply hover:bg-yellow-300 hover:border-black;
+	@apply py-1 px-1.5;
+	@apply relative;
 	@apply transition-colors duration-300;
 }
 .link.--sm {
@@ -15,6 +15,20 @@
 .link:focus {
 	@apply outline-none;
 	@apply bg-teal-500 border-black;
+}
+.link:after {
+	@apply absolute w-full h-1/4 -z-10;
+	@apply -bottom-1.5 -right-1.5;
+	@apply bg-yellow-300;
+	@apply duration-200;
+	@apply content-[''];
+}
+.link:hover:after {
+	@apply bottom-0 right-0;
+	@apply w-full h-full;
+}
+.link:focus:after {
+	@apply bg-teal-500;
 }
 
 .input {

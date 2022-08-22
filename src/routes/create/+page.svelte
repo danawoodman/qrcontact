@@ -284,25 +284,30 @@
 		</button>
 	</section>
 
-	<p class="mt-20 mb-4">
-		<button class="link --sm" on:click={() => (view_vcard = !view_vcard)}>
-			{#if view_vcard}
-				Hide
-			{:else}
-				View raw vCard data
-			{/if}
-		</button>
-	</p>
+	<section id="vcard-data">
+		<p class="mt-20 mb-4 text-center">
+			<button class="link --sm" on:click={() => (view_vcard = !view_vcard)}>
+				{#if view_vcard}
+					Hide
+				{:else}
+					View raw vCard data
+				{/if}
+			</button>
+		</p>
 
-	{#if view_vcard}
-		<div transition:slide>
-			<pre class="p-6 bg-slate-200 rounded-md overflow-auto">{$vcard}</pre>
-		</div>
-	{/if}
-	<p class="text-sm text-slate-500 mt-12">
-		🔐 <strong>Security note:</strong> Nothing you input on this page leaves this
-		page, your data is safe!
-	</p>
+		{#if view_vcard}
+			<div transition:slide>
+				<pre class="p-6 bg-slate-200 rounded-md overflow-auto">{$vcard}</pre>
+			</div>
+		{/if}
+	</section>
+
+	<section class="text-sm text-slate-500 mt-12 text-center">
+		<p class="mb-2">
+			🔐 <strong>Security note:</strong>
+		</p>
+		<p>Nothing you input on this page leaves this page, your data is safe!</p>
+	</section>
 </main>
 
 <style lang="postcss">
