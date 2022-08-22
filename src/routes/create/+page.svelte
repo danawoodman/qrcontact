@@ -118,6 +118,7 @@
 							<button
 								class="btn --sm --icon ml-2"
 								on:click={() => remove_phone(i)}
+								aria-label="Remove phone number"
 							>
 								<CloseIcon />
 							</button>
@@ -163,6 +164,7 @@
 							<button
 								class="btn --sm --icon ml-2"
 								on:click={() => remove_email(i)}
+								aria-label="Remove email address"
 							>
 								<CloseIcon />
 							</button>
@@ -208,6 +210,7 @@
 							<button
 								class="btn --sm --icon ml-2"
 								on:click={() => remove_url(i)}
+								aria-label="Remove URL"
 							>
 								<CloseIcon />
 							</button>
@@ -298,6 +301,7 @@
 							<button
 								class="btn --sm --icon mt-2 sm:mt-0 sm:ml-2"
 								on:click={() => remove_address(i)}
+								aria-label="Remove address"
 							>
 								<CloseIcon />
 							</button>
