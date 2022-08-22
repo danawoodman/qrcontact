@@ -95,7 +95,7 @@
 							transition:slide={{ duration: 200 }}
 						>
 							<input
-								type="text"
+								type="phone"
 								placeholder="Label..."
 								class="input w-24 sm:w-36"
 								bind:value={phone.label}
@@ -139,7 +139,7 @@
 							transition:slide={{ duration: 200 }}
 						>
 							<input
-								type="text"
+								type="email"
 								placeholder="Label..."
 								class="input w-24 sm:w-36"
 								bind:value={email.label}
@@ -237,6 +237,7 @@
 							<div class="flex-1 sm:ml-2">
 								<div class="flex flex-col sm:flex-row items-center">
 									<input
+										name="street-address"
 										type="text"
 										placeholder="Street address..."
 										class="input w-full mt-2 sm:mr-2 sm:mt-0"
@@ -244,6 +245,7 @@
 									/>
 									<input
 										type="text"
+										name="street-address-2"
 										placeholder="Street address 2..."
 										class="input w-full mt-2 sm:mt-0"
 										bind:value={address.street_2}
@@ -252,12 +254,14 @@
 								<div class="flex items-center mt-2">
 									<input
 										type="text"
+										name="city"
 										placeholder="City..."
 										class="input w-full mr-2"
 										bind:value={address.city}
 									/>
 									<input
 										type="text"
+										name="state"
 										placeholder="State..."
 										class="input w-full"
 										bind:value={address.state_province}
@@ -266,12 +270,14 @@
 								<div class="flex items-center mt-2">
 									<input
 										type="text"
+										name="postal-code"
 										placeholder="Postal code..."
 										class="input w-full mr-2"
 										bind:value={address.postal_code}
 									/>
 									<input
 										type="text"
+										name="country"
 										placeholder="Country..."
 										class="input w-full"
 										bind:value={address.country_region}
