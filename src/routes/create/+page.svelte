@@ -56,12 +56,17 @@
 	}
 </script>
 
+<svelte:head>
+	<title>vCard QR code generator</title>
+	<meta name="description" content="Generate a QR code for a vCard" />
+</svelte:head>
+
 <main>
 	<div class="md:flex items-start mx-auto justify-center px-8">
 		<div class="max-w-prose sm:mr-12">
 			<!-- <section id="photo" class="mt-20">
-		<PhotoUploader />
-		</section> -->
+				<PhotoUploader />
+			</section> -->
 
 			<section id="name" class="my-12">
 				<h3 class="section-heading">Your name</h3>
@@ -315,9 +320,9 @@
 
 		<section
 			id="qrcode"
-			class="my-12 flex flex-col items-center justify-center md:w-64"
+			class="my-12 flex flex-col items-center justify-center"
 		>
-			<div class="bg-white shadow-md rounded-lg p-4">
+			<div class="bg-white shadow-md rounded-lg p-4 md:w-64 md:h-64">
 				<QrCode data={$vcard} bind:qrcode />
 			</div>
 			<p class="text-center mt-12">
