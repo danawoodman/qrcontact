@@ -68,17 +68,20 @@
 				<fieldset class="flex items-center">
 					<input
 						type="text"
+						name="first-name"
 						class="input w-full"
 						bind:value={$contact.first_name}
 					/>
 					<input
 						type="text"
+						name="middle-name"
 						class="input mx-2 w-20 sm:w-28"
 						placeholder="Middle name..."
 						bind:value={$contact.middle_name}
 					/>
 					<input
 						type="text"
+						name="last-name"
 						class="input w-full"
 						placeholder="Last name..."
 						bind:value={$contact.last_name}
@@ -96,6 +99,7 @@
 						>
 							<input
 								type="phone"
+								name="phone"
 								placeholder="Label..."
 								class="input w-24 sm:w-36"
 								bind:value={phone.label}
@@ -140,6 +144,7 @@
 						>
 							<input
 								type="email"
+								name="email"
 								placeholder="Label..."
 								class="input w-24 sm:w-36"
 								bind:value={email.label}
@@ -184,6 +189,7 @@
 						>
 							<input
 								type="text"
+								name="url"
 								placeholder="Label..."
 								class="input w-24 sm:w-36"
 								bind:value={email.label}
