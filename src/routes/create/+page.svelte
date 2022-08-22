@@ -61,8 +61,8 @@
 	<meta name="description" content="Generate a QR code for a vCard" />
 </svelte:head>
 
-<main>
-	<div class="md:flex items-start mx-auto justify-center px-8">
+<main class="px-4">
+	<div class="md:flex items-start mx-auto justify-center">
 		<div class="max-w-prose sm:mr-12">
 			<!-- <section id="photo" class="mt-20">
 				<PhotoUploader />

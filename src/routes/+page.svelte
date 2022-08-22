@@ -1,4 +1,4 @@
-<section class="mx-auto max-w-prose prose dark:prose-invert mt-16 mb-12 px-8">
+<section class="mx-auto max-w-prose prose dark:prose-invert mt-16 mb-12 px-4">
 	<p class="text-center text-sm mb-8">
 		<span
 			class="
@@ -10,7 +10,12 @@
 			100% FREE (REALLY)
 		</span>
 	</p>
-	<h1 class="text-6xl uppercase text-center dark:text-slate-300">
+	<h1
+		class="
+		text-5xl sm:text-6xl 
+		uppercase text-center 
+		dark:text-slate-300"
+	>
 		QR Code <br />
 		<span class="text-yellow-500">contact generator</span>
 	</h1>
