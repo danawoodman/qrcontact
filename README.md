@@ -32,3 +32,5 @@ npm run dev
 - [vCard](https://en.wikipedia.org/wiki/VCard) - The format for generating vCards
 - [node-qrcode](https://github.com/soldair/node-qrcode) - The library used to generate QR codes
 - [bitly's vcard creator](https://www.qr-code-generator.com/solutions/vcard-qr-code/) - Way more robust version of this app 😅
+- https://www.npmjs.com/package/qrcode-svg
+- https://github.com/kozakdenys/qr-code-styling

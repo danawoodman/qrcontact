@@ -1,7 +1,7 @@
-import kebab from "just-kebab-case";
-import { derived, writable } from "svelte/store";
-import flush from "just-flush";
 import { local_storage_store } from "$lib/stores/localstorage";
+import flush from "just-flush";
+import kebab from "just-kebab-case";
+import { derived } from "svelte/store";
 
 export const contact = local_storage_store<Partial<ContactInfo>>("contact", {
 	title: "Mr.",
@@ -60,6 +60,13 @@ function make_vcard(contact: Partial<ContactInfo>): string {
 
 	if (contact?.nicknames?.length)
 		parts.push(`NICKNAME:${contact.nicknames.join(",")}`);
+
+	// if (contact?.photo) {
+	parts.push(
+		// `PHOTO;TYPE=${contact.photo.media_type};ENCODING=b:${contact.photo.base64}`
+		`PHOTO;MEDIATYPE=image/jpeg:https://avatars.githubusercontent.com/u/157695?s=300&v=4` //${contact.photo.base64}`
+	);
+	// }
 
 	// ORG:Example Organisation
 
@@ -128,3 +135,5 @@ function has_values(obj: Record<string, any>): boolean {
 	const flushed = flush(values);
 	return Boolean(flushed?.length);
 }
+
+// contact.subscribe((contact) => console.log("contact:", contact));

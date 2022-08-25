@@ -13,7 +13,7 @@
 <Header />
 
 {#key changed}
-	<div in:fade={{ duration }} out:fade={{ delay: duration, duration }}>
+	<div in:fade={{ delay: duration, duration }} out:fade={{ duration }}>
 		<slot />
 	</div>
 {/key}
