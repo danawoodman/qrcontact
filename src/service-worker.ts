@@ -1,5 +1,10 @@
 /// <reference lib="webworker" />
 
+/**
+ * Credit goes to Navin Kodag for most of this code, checkout his post here:
+ * https://dev.to/100lvlmaster/create-a-pwa-with-sveltekit-svelte-a36
+ */
+
 import { build, files, version } from "$service-worker";
 
 const worker = self as unknown as ServiceWorkerGlobalScope;
