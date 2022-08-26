@@ -2,8 +2,8 @@
 	<p class="text-center text-sm mb-8">
 		<span
 			class="
-			bg-blue-200 text-blue-800 
-			dark:bg-teal-400 dark:text-slate-900
+			bg-slate-200 text-slate-700 
+			dark:bg-slate-300 dark:text-slate-900
 			px-4 py-1.5 rounded-full 
 			font-bold uppercase"
 		>
@@ -14,7 +14,7 @@
 		class="
 		text-5xl sm:text-6xl 
 		uppercase text-center 
-		dark:text-slate-300"
+		dark:text-slate-100"
 	>
 		QR Code <br />
 		<span class="text-yellow-500">contact generator</span>
