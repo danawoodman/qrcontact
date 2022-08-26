@@ -21,8 +21,7 @@
 	</h1>
 	<p class="text-xl leading-relaxed">
 		Create a QR code that you can print, email or share with anyone so they can
-		add you to their contacts list. Works on iPhone, Android, Windows, Mac and
-		more!
+		add you to their contacts list. Works on iPhone, Android and more!
 	</p>
 	<ol>
 		<li>

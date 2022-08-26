@@ -70,8 +70,6 @@ function make_vcard(contact: Partial<ContactInfo>): string {
 	// );
 	// }
 
-	// ORG:Example Organisation
-
 	parts.push(
 		...construct_fields(
 			contact?.emails,
