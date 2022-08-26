@@ -1,7 +1,7 @@
 /**
  * Taken from https://github.com/babichjacob/svelte-localstorage
  *
- * Replace with that package when they support TypeScript.
+ * Replace with that package when TypeScript support is working again.
  *
  * @see https://github.com/babichjacob/svelte-localstorage/issues/22
  */
