@@ -68,6 +68,7 @@
 				<fieldset class="flex items-center">
 					<input
 						aria-label="First name"
+						autocomplete="given-name"
 						type="text"
 						name="first-name"
 						class="input w-full"
@@ -76,6 +77,7 @@
 					/>
 					<input
 						aria-label="Middle name"
+						autocomplete="additional-name"
 						type="text"
 						name="middle-name"
 						class="input mx-2 w-20 sm:w-28"
@@ -84,6 +86,7 @@
 					/>
 					<input
 						aria-label="Last name"
+						autocomplete="family-name"
 						type="text"
 						name="last-name"
 						class="input w-full"
@@ -94,6 +97,7 @@
 				<fieldset class="flex items-center mt-2">
 					<input
 						aria-label="Nickname"
+						autocomplete="nickname"
 						type="text"
 						name="nickname"
 						class="input w-full"
@@ -108,6 +112,7 @@
 				<fieldset class="flex items-center">
 					<input
 						aria-label="Job title"
+						autocomplete="organization-title"
 						type="text"
 						name="job-title"
 						class="input w-full w-36"
@@ -117,6 +122,7 @@
 					<span class="mx-2">at</span>
 					<input
 						aria-label="Organization/company"
+						autocomplete="organization"
 						type="text"
 						name="organization"
 						class="input w-full"
@@ -144,6 +150,7 @@
 							/>
 							<input
 								aria-label="Phone number"
+								autocomplete="tel"
 								type="text"
 								placeholder="Phone number..."
 								class="input ml-2 w-full flex-1"
@@ -192,6 +199,7 @@
 							/>
 							<input
 								aria-label="Email address"
+								autocomplete="email"
 								type="text"
 								placeholder="Email address..."
 								class="input ml-2 w-full flex-1"
@@ -240,6 +248,7 @@
 							/>
 							<input
 								aria-label="URL"
+								autocomplete="url"
 								type="text"
 								placeholder="Email address..."
 								class="input ml-2 w-full flex-1"
@@ -291,6 +300,7 @@
 								<div class="flex flex-col sm:flex-row items-center">
 									<input
 										aria-label="Address street address"
+										autocomplete="street-line1"
 										name="street-address"
 										type="text"
 										placeholder="Street address..."
@@ -299,6 +309,7 @@
 									/>
 									<input
 										aria-label="Address secondary street address"
+										autocomplete="address-line2"
 										type="text"
 										name="street-address-2"
 										placeholder="Street address 2..."
@@ -309,6 +320,7 @@
 								<div class="flex items-center mt-2">
 									<input
 										aria-label="Address city"
+										autocomplete="city"
 										type="text"
 										name="city"
 										placeholder="City..."
@@ -317,6 +329,7 @@
 									/>
 									<input
 										aria-label="Address state"
+										autocomplete="state"
 										type="text"
 										name="state"
 										placeholder="State..."
@@ -327,6 +340,7 @@
 								<div class="flex items-center mt-2">
 									<input
 										aria-label="Address postal code"
+										autocomplete="postal-code"
 										type="text"
 										name="postal-code"
 										placeholder="Postal code..."
@@ -335,6 +349,7 @@
 									/>
 									<input
 										aria-label="Address country"
+										autocomplete="country"
 										type="text"
 										name="country"
 										placeholder="Country..."
