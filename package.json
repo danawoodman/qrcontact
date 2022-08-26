@@ -15,7 +15,7 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/typography": "0.5.4",
-		"@types/qrcode": "1.4.3",
+		"@types/qrcode": "1.5.0",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"autoprefixer": "^10.4.7",
@@ -36,10 +36,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"-": "0.0.1",
-		"D": "1.0.0",
 		"just-flush": "2.2.1",
-		"just-is-empty": "3.2.1",
 		"just-kebab-case": "4.1.1",
 		"qrcode": "1.5.1"
 	}
