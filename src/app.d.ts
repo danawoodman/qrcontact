@@ -36,6 +36,7 @@ interface ContactURL {
 
 interface ContactInfo {
 	title: string;
+	organization: string;
 	first_name: string;
 	middle_name: string;
 	last_name: string;
@@ -49,9 +50,8 @@ interface ContactInfo {
 	// photo: {
 	// 	url: string;
 	// 	media_type: string;
-	// 	base64: boolean;
+	// 	base64: string;
 	// };
-
 	// name_prefix: string;
 	// name_suffix: string;
 	// gender: string;
@@ -62,10 +62,6 @@ interface ContactInfo {
 	// 	base64: boolean;
 	// };
 	// role: string;
-	// organization: string;
 	// note: string;
 	// source: string;
-
-	// homeFax: string[] | string;
-	// workFax: string[] | string;
 }

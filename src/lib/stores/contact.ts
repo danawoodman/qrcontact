@@ -4,11 +4,12 @@ import kebab from "just-kebab-case";
 import { derived } from "svelte/store";
 
 export const contact = local_storage_store<Partial<ContactInfo>>("contact", {
-	title: "Mr.",
+	title: "CEO",
+	organization: "Initech",
 	first_name: "John",
 	middle_name: "H",
 	last_name: "Smith",
-	nicknames: ["Jon", "Johnny"],
+	nickname: "Johnny",
 	emails: [
 		{ label: "work", address: "work@example.com" },
 		{ label: "home", address: "home@example.com" },
@@ -58,14 +59,15 @@ function make_vcard(contact: Partial<ContactInfo>): string {
 
 	if (contact.title) parts.push(`TITLE:${contact.title}`);
 
-	if (contact?.nicknames?.length)
-		parts.push(`NICKNAME:${contact.nicknames.join(",")}`);
+	if (contact.organization) parts.push(`ORG:${contact.organization}`);
+
+	if (contact.nickname) parts.push(`NICKNAME:${contact.nickname}`);
 
 	// if (contact?.photo) {
-	parts.push(
-		// `PHOTO;TYPE=${contact.photo.media_type};ENCODING=b:${contact.photo.base64}`
-		`PHOTO;MEDIATYPE=image/jpeg:https://avatars.githubusercontent.com/u/157695?s=300&v=4` //${contact.photo.base64}`
-	);
+	// parts.push(
+	// 	// `PHOTO;TYPE=${contact.photo.media_type};ENCODING=b:${contact.photo.base64}`
+	// 	`PHOTO;MEDIATYPE=image/jpeg:https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bWFuJTIwZmFjZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60` //${contact.photo.base64}`
+	// );
 	// }
 
 	// ORG:Example Organisation

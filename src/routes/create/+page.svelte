@@ -56,11 +56,6 @@
 	}
 </script>
 
-<svelte:head>
-	<title>vCard QR code generator</title>
-	<meta name="description" content="Generate a QR code for a vCard" />
-</svelte:head>
-
 <main class="px-4">
 	<div class="md:flex items-start mx-auto justify-center">
 		<div class="max-w-prose md:mr-12">
@@ -76,6 +71,7 @@
 						type="text"
 						name="first-name"
 						class="input w-full"
+						placeholder="First name..."
 						bind:value={$contact.first_name}
 					/>
 					<input
@@ -93,6 +89,39 @@
 						class="input w-full"
 						placeholder="Last name..."
 						bind:value={$contact.last_name}
+					/>
+				</fieldset>
+				<fieldset class="flex items-center mt-2">
+					<input
+						aria-label="Nickname"
+						type="text"
+						name="nickname"
+						class="input w-full"
+						placeholder="Nickname..."
+						bind:value={$contact.nickname}
+					/>
+				</fieldset>
+			</section>
+
+			<section id="organization" class="my-12">
+				<h1 class="section-heading">Company</h1>
+				<fieldset class="flex items-center">
+					<input
+						aria-label="Job title"
+						type="text"
+						name="job-title"
+						class="input w-full w-36"
+						placeholder="Job title..."
+						bind:value={$contact.title}
+					/>
+					<span class="mx-2">at</span>
+					<input
+						aria-label="Organization/company"
+						type="text"
+						name="organization"
+						class="input w-full"
+						placeholder="Company/organization name..."
+						bind:value={$contact.organization}
 					/>
 				</fieldset>
 			</section>
