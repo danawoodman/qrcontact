@@ -250,7 +250,7 @@
 								aria-label="URL"
 								autocomplete="url"
 								type="text"
-								placeholder="Email address..."
+								placeholder="URL..."
 								class="input ml-2 w-full flex-1"
 								bind:value={email.href}
 							/>
@@ -300,7 +300,7 @@
 								<div class="flex flex-col sm:flex-row items-center">
 									<input
 										aria-label="Address street address"
-										autocomplete="street-line1"
+										autocomplete="address-line1"
 										name="street-address"
 										type="text"
 										placeholder="Street address..."
@@ -320,7 +320,7 @@
 								<div class="flex items-center mt-2">
 									<input
 										aria-label="Address city"
-										autocomplete="city"
+										autocomplete="address-level2"
 										type="text"
 										name="city"
 										placeholder="City..."
@@ -329,7 +329,7 @@
 									/>
 									<input
 										aria-label="Address state"
-										autocomplete="state"
+										autocomplete="address-level1"
 										type="text"
 										name="state"
 										placeholder="State..."
@@ -349,7 +349,7 @@
 									/>
 									<input
 										aria-label="Address country"
-										autocomplete="country"
+										autocomplete="country-name"
 										type="text"
 										name="country"
 										placeholder="Country..."
