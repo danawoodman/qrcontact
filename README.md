@@ -14,7 +14,8 @@
 #### Features
 
 - **🧘 Flexible** - Add as many contact details as you want!
-- **🔌 Works offline!** - Your contact details are stored locally in local storage
+- **🔌 Works offline!** - Will work even if you're not connected to the internet, using Service Workers.
+- **💾 Locally saved data** - Your contact details are stored locally in localstorage.
 - **☀️🌙 Automatic light/dark mode support** - Using TailwindCSS's `dark:` attribute, including a dark/light mode favicon!
 - **🎚 Page transitions** - Pages fade in and out when you navigate.
 - **💅 Subtle animations** - Adding/removing items fade out, buttons have color transitions, etc.
